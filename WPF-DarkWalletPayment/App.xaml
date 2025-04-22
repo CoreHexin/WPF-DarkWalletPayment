@@ -114,5 +114,154 @@
             </Setter>
         </Style>
 
+        <Style x:Key="border" TargetType="Border">
+            <Setter Property="Background" Value="#362f54" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="CornerRadius" Value="25" />
+        </Style>
+
+        <Style x:Key="tabButton" TargetType="Button">
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#fcfcfc" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Padding="20,10"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="#3f375f"
+                            BorderThickness="0,0,0,2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Padding="20,10"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="0,0,0,2">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#d489ff" />
+                                            <GradientStop Offset="0.5" Color="#7985ff" />
+                                            <GradientStop Offset="1" Color="#6ad8fd" />
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style
+            x:Key="activeTabButton"
+            BasedOn="{StaticResource tabButton}"
+            TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Padding="20,10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="0,0,0,2">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#d489ff" />
+                                    <GradientStop Offset="0.5" Color="#7985ff" />
+                                    <GradientStop Offset="1" Color="#6ad8fd" />
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="textLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#fcfcfc" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#3f375f" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Padding" Value="15,12" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="#fcfcfc" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style x:Key="sendButton" TargetType="Button">
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Foreground" Value="#f0f0f0" />
+            <Setter Property="Margin" Value="0,15,0,0" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Padding="20,0"
+                            BorderThickness="0"
+                            CornerRadius="20">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#7985ff" />
+                                    <GradientStop Offset="1" Color="#6ad8fd" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Padding="20,0"
+                                    BorderThickness="0"
+                                    CornerRadius="20">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                            <GradientStop Offset="0.5" Color="#7985ff" />
+                                            <GradientStop Offset="1" Color="#6ad8fd" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="whiteIcon" TargetType="fa:ImageAwesome">
+            <Setter Property="Foreground" Value="#f0f0f0" />
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Height" Value="15" />
+        </Style>
     </Application.Resources>
 </Application>
