@@ -32,7 +32,10 @@
                 </Border.Background>
             </Border>
 
-            <Border Grid.Column="1" CornerRadius="0 25 25 0">
+            <Border
+                Grid.Column="1"
+                CornerRadius="0 25 25 0"
+                MouseDown="Border_MouseDown">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Offset="0" Color="#3e3a65" />
@@ -88,10 +91,7 @@
                             <fa:ImageAwesome Icon="BellOutline" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Notifications" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -101,10 +101,7 @@
                             <fa:ImageAwesome Icon="Money" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Deposit" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -114,10 +111,7 @@
                             <fa:ImageAwesome Icon="Clone" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Records" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -127,10 +121,7 @@
                             <fa:ImageAwesome Icon="CommentOutline" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Messages" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -140,10 +131,7 @@
                             <fa:ImageAwesome Icon="Television" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Monitoring" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -153,10 +141,7 @@
                             <fa:ImageAwesome Icon="CreditCard" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="My Cards" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -171,10 +156,7 @@
                             <fa:ImageAwesome Icon="FolderOutlinepenOutline" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Accounts" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -184,10 +166,7 @@
                             <fa:ImageAwesome Icon="CircleOutlineNotch" Style="{StaticResource buttonIcon}" />
                             <TextBlock Style="{StaticResource buttonText}" Text="Logout" />
                         </StackPanel>
-                        <fa:ImageAwesome
-                            Icon="AngleRight"
-                            Style="{StaticResource buttonIconExpanded}"
-                            Visibility="Visible" />
+                        <fa:ImageAwesome Icon="AngleRight" Style="{StaticResource buttonIconExpanded}" />
                     </Grid>
                 </Button>
 
@@ -340,6 +319,278 @@
                 </Border>
             </Grid>
 
+            <!--  Info Panel  -->
+            <StackPanel Grid.Column="2" Margin="0,0,20,0">
+
+                <StackPanel Margin="20,40,20,0" Orientation="Horizontal">
+                    <Button
+                        Width="280"
+                        Height="50"
+                        Margin="10,0,0,0"
+                        Style="{StaticResource topMenuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome Icon="Sliders" Style="{StaticResource topMenuIcon}" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="14"
+                                Text="Add Filters" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button Margin="10,0,0,0" Style="{StaticResource topMenuButton}">
+                        <fa:ImageAwesome Icon="BellOutline" Style="{StaticResource topMenuIcon}" />
+                    </Button>
+
+                    <Button Margin="10,0,0,0" Style="{StaticResource topMenuButton}">
+                        <fa:ImageAwesome Icon="Search" Style="{StaticResource topMenuIcon}" />
+                    </Button>
+
+                </StackPanel>
+
+                <!--  Info Card  -->
+                <Border Margin="20,31,20,0" Style="{StaticResource cardBorder}">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Offset="0" Color="#9085fa" />
+                            <GradientStop Offset="1" Color="#c77aff" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,8,0,0"
+                            VerticalAlignment="Top"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Style="{StaticResource textLabel}"
+                            Text="Balance" />
+                        <TextBlock
+                            Margin="15,0,0,10"
+                            VerticalAlignment="Center"
+                            FontSize="24"
+                            FontWeight="SemiBold"
+                            Style="{StaticResource textLabel}"
+                            Text="$ 9,150,00" />
+
+                        <StackPanel
+                            Margin="0,8,10,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top">
+                            <Button Style="{StaticResource fillButton}">
+                                <fa:ImageAwesome
+                                    Width="10"
+                                    Height="10"
+                                    Icon="Dollar"
+                                    Style="{StaticResource whiteIcon}" />
+                            </Button>
+                            <Button Margin="0,5,0,0" Style="{StaticResource fillButton}">
+                                <fa:ImageAwesome
+                                    Width="10"
+                                    Height="10"
+                                    Icon="Percent"
+                                    Style="{StaticResource whiteIcon}" />
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel
+                            Margin="15,0,0,5"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Button Style="{StaticResource fillButton}">
+                                <fa:ImageAwesome
+                                    Width="10"
+                                    Height="10"
+                                    Icon="ArrowUp"
+                                    Style="{StaticResource whiteIcon}" />
+                            </Button>
+                            <TextBlock
+                                Margin="10,0,20,0"
+                                VerticalAlignment="Center"
+                                FontWeight="SemiBold"
+                                Style="{StaticResource textLabel}"
+                                Text="+ $ 620.12" />
+                            <Button Style="{StaticResource fillButton}">
+                                <fa:ImageAwesome
+                                    Width="10"
+                                    Height="10"
+                                    Icon="ArrowDown"
+                                    Style="{StaticResource whiteIcon}" />
+                            </Button>
+                            <TextBlock
+                                Margin="10,0,20,0"
+                                VerticalAlignment="Center"
+                                FontWeight="SemiBold"
+                                Style="{StaticResource textLabel}"
+                                Text="- $ 920.12" />
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!--  Infomation Card  -->
+                <Border Margin="20" Style="{StaticResource border}">
+                    <Grid Margin="15,13">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.ColumnSpan="3"
+                            Margin="0,0,0,10"
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Foreground="#fcfcfc"
+                            Text="Information" />
+
+                        <Button
+                            Grid.ColumnSpan="3"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource button}">
+                            <fa:ImageAwesome
+                                Width="14"
+                                Height="12"
+                                Icon="Edit"
+                                Style="{StaticResource whiteIcon}" />
+                        </Button>
+
+                        <fa:ImageAwesome
+                            Grid.Row="1"
+                            Icon="MapMarker"
+                            Style="{StaticResource whiteIcon}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,10"
+                            Style="{StaticResource textLabel}"
+                            Text="Address : " />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="0,10"
+                            Style="{StaticResource textLabel}"
+                            Text="Peru" />
+
+                        <fa:ImageAwesome
+                            Grid.Row="2"
+                            Icon="Folder"
+                            Style="{StaticResource whiteIcon}" />
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="10,10"
+                            Style="{StaticResource textLabel}"
+                            Text="Wallet ID : " />
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="0,10"
+                            Style="{StaticResource textLabel}"
+                            Text="3d2csd9utsdf786sdf6sdg56s7dg76sdf" />
+                    </Grid>
+                </Border>
+
+                <!--  Security Card  -->
+                <Border Margin="20,0" Style="{StaticResource border}">
+                    <Grid Margin="15,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.ColumnSpan="3"
+                            Margin="0,0,0,15"
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Foreground="#fcfcfc"
+                            Text="Security" />
+
+                        <Button
+                            Grid.ColumnSpan="3"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource button}">
+                            <fa:ImageAwesome
+                                Width="14"
+                                Height="12"
+                                Icon="EllipsisH"
+                                Style="{StaticResource whiteIcon}" />
+                        </Button>
+
+                        <fa:ImageAwesome
+                            Grid.Row="1"
+                            Icon="Shield"
+                            Style="{StaticResource whiteIcon}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,10"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource textLabel}"
+                            Text="2FA Enabled" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="0,5"
+                            Content="change"
+                            Style="{StaticResource button}" />
+
+                        <fa:ImageAwesome
+                            Grid.Row="2"
+                            Icon="Key"
+                            Style="{StaticResource whiteIcon}" />
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="10,10"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource textLabel}"
+                            Text="Key" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="0,5"
+                            Content="change"
+                            Style="{StaticResource button}" />
+
+                        <fa:ImageAwesome
+                            Grid.Row="3"
+                            Icon="Lock"
+                            Style="{StaticResource whiteIcon}" />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="10,10"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource textLabel}"
+                            Text="Password" />
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Margin="0,5"
+                            Content="change"
+                            Style="{StaticResource button}" />
+
+
+                    </Grid>
+                </Border>
+            </StackPanel>
         </Grid>
 
     </Grid>
